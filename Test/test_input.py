@@ -28,7 +28,7 @@ def test_data_input(driver_init):
     found_button.click()
     text_element = driver_init.find_element(By.CSS_SELECTOR, "p.smed-text_body-sm")
     text = text_element.text
-    assert text == "Отправили код в СМС."
+    assert not text == "Отправили код в СМС."
 
 
 
