@@ -6,10 +6,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# driver = webdriver.Chrome()
-#
-# driver.get('https://perm.medsi.ru/')
-# driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+driver = webdriver.Chrome()
+
+driver.get('https://perm.medsi.ru/')
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
 def test_button(driver_init):
     with allure.step("Открытие сайта Медси"):
