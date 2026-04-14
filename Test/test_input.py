@@ -1,5 +1,5 @@
-#ввод данных в поле
 import allure
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,6 +11,12 @@ driver = webdriver.Chrome()
 driver.get('https://perm.medsi.ru/')
 driver.maximize_window()
 driver.implicitly_wait(10)
+
+@allure.id("3")
+@allure.label("Ввод данных в поле")
+@allure.title("Ввод цифр в поле")
+@allure.description("Тест, проверяющий ввод цифр в поле регистрации пользователя")
+@allure.severity("Normal")
 
 def test_data_input(driver_init):
     with allure.step("Открытие сайта 'Медси'"):
@@ -32,7 +38,7 @@ def test_data_input(driver_init):
         found_button.click()
 
     with allure.step("Вводим рандомные цифры"):
-        found_button.send_keys("0123456789")
+        found_button.send_keys('0123456789')
 
     with allure.step("Нажимаем кнопку 'Продолжить'"):
         found_button = driver_init.find_element(By.CSS_SELECTOR, "span.smed-base-button__content")

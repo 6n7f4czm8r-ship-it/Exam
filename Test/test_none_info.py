@@ -1,5 +1,5 @@
-# ввод пустого поля
 import allure
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,9 +11,15 @@ driver = webdriver.Chrome()
 driver.get('https://perm.medsi.ru/')
 driver.maximize_window()
 driver.implicitly_wait(10)
-# driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-def test_data_input(driver_init):
+@allure.id("4")
+@allure.label("Пустое поле")
+@allure.title("Вход без данных пользователя")
+@allure.description("Тест, проверяющий регистрацию без ввода данных")
+@allure.severity("Normal")
+
+def test_none_input(driver_init):
     with allure.step("Переход на сайт 'Медси'"):
         driver_init.get('https://perm.medsi.ru/')
 
@@ -40,3 +46,4 @@ def test_data_input(driver_init):
         text_element = driver_init.find_element(By.CSS_SELECTOR, "p.smed-text_body-sm")
         text = text_element.text
         assert not text == "Некорректный номер мобильного телефона"
+        # driver.quit()
