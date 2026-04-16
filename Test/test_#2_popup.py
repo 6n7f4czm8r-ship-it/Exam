@@ -11,7 +11,7 @@ driver.get('https://perm.medsi.ru/')
 driver.maximize_window()
 driver.implicitly_wait(10)
 
-@allure.id("3")
+@allure.id("2")
 @allure.label("Всплывающее окно")
 @allure.title("Закрытие всплывающего окна выбора региона")
 @allure.description("Тест, проверяющий принятие всплывающего окна о выборе региона")
@@ -26,5 +26,4 @@ def test_button_2(driver_init):
         print("Всплывающее окно закрыто")
     except Exception as e:
         print("Окно не появилось")
-
     pass

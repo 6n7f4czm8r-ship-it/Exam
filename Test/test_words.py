@@ -30,6 +30,9 @@ def test_words_input(driver_init):
         windows = driver_init.window_handles
         driver_init.switch_to.window(windows[1])
 
+    with allure.step("Скролим страницу вниз"):
+        driver_init.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
     with allure.step("Закрытие баннера"):
         close_button = modal.find_element(By.CSS_SELECTOR, "button.smed-base-button")
         close_button.click()

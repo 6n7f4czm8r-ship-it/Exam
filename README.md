@@ -40,8 +40,8 @@ Exam
 │   ├── №6 test_words.py     # Тест ввода букв
 │   ├── №7 test_none_info.py # Тест с пустым полем
 │   └── №8_test_lab.py       # Тест перехода на страницу и добавления анализа в корзину
-│
-│
+│ 
+├──test_case_and_check-list  # Тест - кейсы и чек листы
 ├── conftest.py              # 💬 Корневой conftest (общие фикстуры). 
 │── README.MD                # 📚 Информация о проекте
 └── requirements.txt         # ☑️ Зависимости

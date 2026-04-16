@@ -33,6 +33,9 @@ def test_data_input(driver_init):
         windows = driver_init.window_handles
         driver_init.switch_to.window(windows[1])
 
+    with allure.step("Скролим страницу вниз"):
+        driver_init.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
     with allure.step("Нажимаем на поле ввода номера телефона"):
         found_button = driver_init.find_element(By.CSS_SELECTOR, "input.smed-input__native")
         found_button.click()

@@ -2,8 +2,8 @@ import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 driver = webdriver.Chrome()
 
@@ -17,6 +17,7 @@ driver.implicitly_wait(10)
 @allure.description("Тест, проверяющий принятие всплывающего окна Cookie-файлов")
 @allure.severity("Normal")
 
+# @pytest.mark.parametrize("browser", ["Chrome", "Firefox", "Safari"], indirect=True)
 def test_button_1(driver_init):
   try:
       close_button = WebDriverWait(driver, 30).until(

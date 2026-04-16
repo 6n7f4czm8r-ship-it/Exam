@@ -10,7 +10,7 @@ driver = webdriver.Chrome()
 driver.get('https://perm.medsi.ru/')
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-@allure.id("2")
+@allure.id("3")
 @allure.label("Переход на другую страницу")
 @allure.title("Переход по вкладке на другую страницу")
 @allure.description("Тест, проверяющий нажатие кнопки и переход на другую страницу")
